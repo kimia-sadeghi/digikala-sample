@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>digikala</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.rtl.min.css">
+    <script src="./assets/js/index.js" defer></script>
+    <script src="./assets/js/bootstrap.min.js" defer></script>
+    <script src="./assets/js/bootstrap.bundle.min.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header__right-side">
+            <div class="header__logo">
+                <img src="./assets/images/logo.svg" alt="">
+                
+            </div>
+        <div class="header__search-box">
+            <input type="text" placeholder="جستجو" class="header__input-search" id="searchinput" onClick="searchBox()">
+            <span class="header__search-icon">
+                <img src="./assets/images/search.png" alt="">
+            </span>
+            <div class="header__search-data">
+
+            </div>
+        </div>
+        </div>
+        <div class="header__left-side">
+            <div class="header__profile">
+                <div class="dropdown">
+                    <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="./assets/images/user.png" width="24px" height="24px" alt="">
+                    </a>
+                  
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+                 
+            </div>
+            <div class="header__cart">
+                <img src="./assets/images/trolley.png" width="24" alt="">
+            </div>
+        </div>
+    </header>
+   <nav class="d-flex gap-4">
+		
+		<ul>
+			<li class="cursor-pointer product-categories position-relative">
+				<a href="">دسته بندی کالاها</a>
+				<div class="sub-menu"  >
+				<div class="products-title"></div>
+				<div class="categories">
+				<div class="cat-items">
+					<div class="mobiles">
+						<div><a href="">همه ی محصولات موبایل</a></div>
+						<div class="mobile-category"></div>
+					</div>
+				</div>
+
+				</div>
+   </div>
+
+			</li>
+		</ul>
+		<div class="d-flex gap-3">
+			<div>
+				<a href="">شگفت انگیز ها</a>
+			</div>
+			<div>
+				<a href="">
+					پرفروش ترین ها
+				</a>
+			</div>
+			<div>
+				<a href="">
+					تخفیف و پیشنهادها
+				</a>
+			</div>
+			
+		</div>
+   </nav>
+   
+   <main class="position-relative w-100" >
+   <div class="overlab" ></div>
+   </main>
+
+
+   
+</body>
+</html>
