@@ -168,7 +168,7 @@ main {
 .cat-items > div {
 	display: none;
 }
-.cat-items .mobiles {
+.cat-items .tabcontent {
 	display: block;
 }
 
@@ -185,4 +185,7 @@ a.sub-content {
 }
 a.sub-content:hover {
 	color: #000;
+}
+.tablinks.active {
+  background-color: #ccc;
 }

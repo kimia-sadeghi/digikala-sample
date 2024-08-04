@@ -6,6 +6,7 @@ const subItems = ['موبایل', 'کالای دیجیتال' , ' لوازم ت�
 for (let i=0 ; i< subItems.length ; i ++ ) {
 	let li = document.createElement('li')
 	li.textContent = subItems[i]
+	li.classList.add('tablinks')
 	ul.appendChild(li)	
 
 	li.addEventListener('click' , function() {
@@ -98,6 +99,26 @@ names()
 // })
 
 
+// function openContents(evt , kala) {
+// 	var i , tabcontent, tablinks
+
+// 	tabcontent = document.querySelector('.tabcontent')
+
+// 	for (i =0; i< tabcontent.length; i++) {
+// 		tabcontent[i].style.display = 'none'
+// 	}
+
+// 	tablinks = document.querySelector('.tablinks')
+// 	for (i =0 ; i <tablinks.length ; i++) {
+// 		tablinks[i].className = tablinks[i].className.replace(" active", "");
+// 	}
+
+// 	document.getElementById(kala).style.display = 'block'
+// 	evt.currentTarget.className += " active";
+// }
+
+
+
 document.addEventListener('DOMContentLoaded' , function() {
 	
 	const productCategories = document.querySelector('.product-categories')
@@ -115,11 +136,11 @@ document.addEventListener('DOMContentLoaded' , function() {
 	submenu.addEventListener ('mouseover' , function() {
 			submenu.style.display = 'flex'
 	})
-	subItems.querySelector('li:first-child').classList.add('hover')
+	// subItems.querySelector('li:first-child').classList.add('hover')
 	submenu.addEventListener ('mouseout' , function() {
 			submenu.style.display = 'none'
 			overlab.style.display = 'none'
-			subItems.querySelector('li:first-child').classList.remove('hover')
+			// subItems.querySelector('li:first-child').classList.remove('hover')
 	})
 })
 
