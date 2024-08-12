@@ -1,121 +1,163 @@
 const ul = document.createElement('ul')
 ul.style.paddingRight = '0'
+ const contentCategories = document.querySelector('.content-category')
+ let contentMenu = ''
+// tabcontent = document.getElementsByClassName("tabcontent");
 
-const subItems = ['موبایل', 'کالای دیجیتال' , ' لوازم تحریر','خانه و آشپزخانه','آرایشی و بهداشتی' ]
+// const subItems = ['موبایل', 'کالای دیجیتال' , ' لوازم تحریر','خانه و آشپزخانه','آرایشی و بهداشتی' ]
+var myDirectories=[
+	{
+		id:1,
+		title:'موبایل',
+		parentId:null
+	},
+	{
+		id:2,
+		title:'کالای دیجیتال',
+		parentId:null
+	},
+	{
+		id:3,
+		title:'لوازم تحریر',
+		parentId:null
+	},
+	{
+		id:4,
+		title:'انواع شیائومی',
+		parentId:1
+	},
+	{
+		id:5,
+		title:'هندز فریی ها',
+		parentId:1
+	},
+	{
+		id:6,
+		title:'دوربین عکاسی',
+		parentId:2
+	},
+	{
+		id:7,
+		title:'ساعت هوشمند',
+		parentId:2
+	},
 
-for (let i=0 ; i< subItems.length ; i ++ ) {
+];
+
+let categoryMenu = myDirectories.filter((el)=> {
+	return el.parentId === null
+}).map((el)=> {
+	return el.title
+})
+
+for (let i=0 ; i< categoryMenu.length ; i ++ ) {
 	let li = document.createElement('li')
-	li.textContent = subItems[i]
+	li.textContent = categoryMenu[i]
 	li.classList.add('tablinks')
 	ul.appendChild(li)	
+	li.addEventListener('mouseover',()=> {
+		console.log(categoryMenu[i])
+		contentCategories.innerHTML="";// added by mahmoud
+		if(categoryMenu[i] == 'موبایل'){
+			
+			 contentMenu = myDirectories.filter((el)=> {
+				return el.parentId == 1
+			} ).map((el)=> {
+				return el.title
+			})
 
-	li.addEventListener('click' , function() {
-		console.log('hi li')
+			for(let j =0 ; j < contentMenu.length; j++) {
+				
+				let div = document.createElement('div')
+				div.textContent = contentMenu[j]
+				console.log(contentMenu[j])
+				contentCategories.appendChild(div)
+			}
+
+			console.log(contentMenu)
+		}
+
+			
+			if(categoryMenu[i] == 'کالای دیجیتال'){
+				
+			 contentMenu = myDirectories.filter((el)=> {
+				return el.parentId == 2
+			} ).map((el)=> {
+				return el.title
+			})
+
+			for(let x =0 ; x < contentMenu.length; x++) {
+
+				
+				let div = document.createElement('div')
+				div.textContent = contentMenu[x]
+				console.log(contentMenu[x])
+				contentCategories.appendChild(div)
+			}
+
+			console.log(contentMenu)
+		}
 	})
 }
 document.querySelector('.products-title').appendChild(ul)
 
-const mobileCategories = [
-	{
-		title : 'برندهای مختلف گوشی موبایل',
-		link :'#brand',
-		content : ['ایفون' , 'سامسونگ ' , 'شیامی']
-
-	},
-	{
-		title : 'گوشی بر اساس قیمت',
-		link :'#base-price',
-		content : ['ارزان قیمت' , 'قسطی']
-
-	},
-	{
-		title : 'لوازم جانبی موبایل' ,
-		link :'#accessories',
-		content : ['شارژ گوشی' , 'قاب گوشی' , 'گلس گوشی'] 
-	}
-]
-
-const mobilesCate = document.querySelector('.mobile-category')
-
-function names() {
-	mobileCategories.map((el) => {
-	let divCategory = document.createElement('div')
-	let catTitle = document.createElement('a')
 	
-	let subContent = el.content
-	let listContent = document.createElement('div')
-	catTitle.textContent = el.title
-	catTitle.setAttribute('href' , el.link)
-	catTitle.classList.add ('title')
-
-	for (let i=0 ; i< subContent.length ; i ++ ) {
-		let content = document.createElement('a')
-		content.textContent = subContent[i]
-		content.setAttribute('href' , el.link)
-		content.classList.add('sub-content')
-
-		
-	listContent.appendChild(content)	
-	console.log(listContent)
-}
-
-	divCategory.appendChild(catTitle)
-	divCategory.appendChild(listContent)
-	mobilesCate.appendChild(divCategory)
 
 
-})
 
-}
 
-names()
 
-// const names = mobileCategories.map((el) => {
+// const mobileCategories = [
+// 	{
+// 		title : 'برندهای مختلف گوشی موبایل',
+// 		link :'#brand',
+// 		content : ['ایفون' , 'سامسونگ ' , 'شیامی']
+
+// 	},
+// 	{
+// 		title : 'گوشی بر اساس قیمت',
+// 		link :'#base-price',
+// 		content : ['ارزان قیمت' , 'قسطی']
+
+// 	},
+// 	{
+// 		title : 'لوازم جانبی موبایل' ,
+// 		link :'#accessories',
+// 		content : ['شارژ گوشی' , 'قاب گوشی' , 'گلس گوشی'] 
+// 	}
+// ]
+
+// const mobilesCate = document.querySelector('.mobile-category')
+
+// function names() {
+// 	mobileCategories.map((el) => {
 // 	let divCategory = document.createElement('div')
 // 	let catTitle = document.createElement('a')
+	
+// 	let subContent = el.content
+// 	let listContent = document.createElement('div')
 // 	catTitle.textContent = el.title
 // 	catTitle.setAttribute('href' , el.link)
 // 	catTitle.classList.add ('title')
 
+// 	for (let i=0 ; i< subContent.length ; i ++ ) {
+// 		let content = document.createElement('a')
+// 		content.textContent = subContent[i]
+// 		content.setAttribute('href' , el.link)
+// 		content.classList.add('sub-content')
 
+		
+// 	listContent.appendChild(content)	
+// 	console.log(listContent)
+// }
 
 // 	divCategory.appendChild(catTitle)
-// 	// divCategory.appendChild(content)
+// 	divCategory.appendChild(listContent)
 // 	mobilesCate.appendChild(divCategory)
 
-// 	return catTitle
 // })
-
-
-
-// const names = mobileCategories.forEach((el) => {
-// 	let catTitle = document.createElement('a')
-// 	catTitle.textContent = el.title
-// 	catTitle.setAttribute('href' , el.link)
-// 	catTitle.classList.add ('title')
-// 	mobilesCate.appendChild(catTitle)
-
-// 	return catTitle
-// })
-
-
-// function openContents(evt , kala) {
-// 	var i , tabcontent, tablinks
-
-// 	tabcontent = document.querySelector('.tabcontent')
-
-// 	for (i =0; i< tabcontent.length; i++) {
-// 		tabcontent[i].style.display = 'none'
-// 	}
-
-// 	tablinks = document.querySelector('.tablinks')
-// 	for (i =0 ; i <tablinks.length ; i++) {
-// 		tablinks[i].className = tablinks[i].className.replace(" active", "");
-// 	}
-
-// 	document.getElementById(kala).style.display = 'block'
-// 	evt.currentTarget.className += " active";
 // }
+// names()
 
 
 
