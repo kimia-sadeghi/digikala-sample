@@ -2,9 +2,7 @@ const ul = document.createElement('ul')
 ul.style.paddingRight = '0'
  const contentCategories = document.querySelector('.content-category')
  let contentMenu = ''
-// tabcontent = document.getElementsByClassName("tabcontent");
-
-// const subItems = ['موبایل', 'کالای دیجیتال' , ' لوازم تحریر','خانه و آشپزخانه','آرایشی و بهداشتی' ]
+ 
 var myDirectories=[
 	{
 		id:1,
@@ -51,19 +49,22 @@ var myDirectories=[
 ];
 
 
-let categoryMenu = myDirectories.filter((el)=> {
+function autoMenuBuilder(){
+	let categoryMenu = myDirectories.filter((el)=> {
 	return el.parentId === null
 }).map((el)=> {
 	return el.title
 })
-
 for (let i=0 ; i< categoryMenu.length ; i ++ ) {
 	let li = document.createElement('li')
 	li.textContent = categoryMenu[i]
 	li.classList.add('tablinks')
 	ul.appendChild(li)	
+	
 	li.addEventListener('mouseover',()=> {
 		
+		
+
 		console.log(categoryMenu[i])
 		contentCategories.innerHTML="";// added by mahmoud
 		let parentDiv = document.createElement('div')
@@ -121,68 +122,9 @@ for (let i=0 ; i< categoryMenu.length ; i ++ ) {
 	})
 }
 document.querySelector('.products-title').appendChild(ul)
-
-	
-
-
-function autoMenuBuilder(){
-	
 }
 
-
-// const mobileCategories = [
-// 	{
-// 		title : 'برندهای مختلف گوشی موبایل',
-// 		link :'#brand',
-// 		content : ['ایفون' , 'سامسونگ ' , 'شیامی']
-
-// 	},
-// 	{
-// 		title : 'گوشی بر اساس قیمت',
-// 		link :'#base-price',
-// 		content : ['ارزان قیمت' , 'قسطی']
-
-// 	},
-// 	{
-// 		title : 'لوازم جانبی موبایل' ,
-// 		link :'#accessories',
-// 		content : ['شارژ گوشی' , 'قاب گوشی' , 'گلس گوشی'] 
-// 	}
-// ]
-
-// const mobilesCate = document.querySelector('.mobile-category')
-
-// function names() {
-// 	mobileCategories.map((el) => {
-// 	let divCategory = document.createElement('div')
-// 	let catTitle = document.createElement('a')
-	
-// 	let subContent = el.content
-// 	let listContent = document.createElement('div')
-// 	catTitle.textContent = el.title
-// 	catTitle.setAttribute('href' , el.link)
-// 	catTitle.classList.add ('title')
-
-// 	for (let i=0 ; i< subContent.length ; i ++ ) {
-// 		let content = document.createElement('a')
-// 		content.textContent = subContent[i]
-// 		content.setAttribute('href' , el.link)
-// 		content.classList.add('sub-content')
-
-		
-// 	listContent.appendChild(content)	
-// 	console.log(listContent)
-// }
-
-// 	divCategory.appendChild(catTitle)
-// 	divCategory.appendChild(listContent)
-// 	mobilesCate.appendChild(divCategory)
-
-// })
-// }
-// names()
-
-
+autoMenuBuilder()
 
 document.addEventListener('DOMContentLoaded' , function() {
 	
@@ -193,6 +135,8 @@ document.addEventListener('DOMContentLoaded' , function() {
 	productCategories.addEventListener ('mouseover' , function() {
 			submenu.style.display = 'flex'
 			overlab.style.display = 'block'
+			
+			
 	})
 
 	productCategories.addEventListener ('mouseout' , function() {
