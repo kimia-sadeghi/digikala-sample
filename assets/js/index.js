@@ -67,7 +67,6 @@ for (let i=0 ; i< categoryMenu.length ; i ++ ) {
 		let parentDiv = document.createElement('div')
 			parentDiv.classList.add('content-products')
 		if(categoryMenu[i] == 'موبایل'){
-
 			let parentTitle = document.createElement('div')
 			let contentTitle = document.createElement('a')
 			contentTitle.setAttribute('href' ,'#')
@@ -132,7 +131,9 @@ document.querySelector('.products-title').appendChild(ul)
 	
 
 
-
+function autoMenuBuilder(){
+	
+}
 
 
 // const mobileCategories = [

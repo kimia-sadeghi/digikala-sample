@@ -192,7 +192,8 @@ a.sub-content:hover {
 }
 .content-products {
 	display: flex;
-	gap: 15px;
-	font-size: 14px;
-	font-weight: bold;
+    gap: 24px;
+    font-size: 14px;
+    font-weight: bold;
+    width: max-content;
 }
