@@ -62,6 +62,7 @@ for (let i=0 ; i< categoryMenu.length ; i ++ ) {
 	li.classList.add('tablinks')
 	ul.appendChild(li)	
 	li.addEventListener('mouseover',()=> {
+		
 		console.log(categoryMenu[i])
 		contentCategories.innerHTML="";// added by mahmoud
 		let parentDiv = document.createElement('div')
@@ -79,21 +80,13 @@ for (let i=0 ; i< categoryMenu.length ; i ++ ) {
 			} ).map((el)=> {
 				return el.title
 			})
-
-
-			
-
 			for(let j =0 ; j < contentMenu.length; j++) {
-				
-				
 				let div = document.createElement('div')
 				div.textContent = contentMenu[j]
 				console.log(contentMenu[j])
-
 				parentDiv.appendChild(div)
 				contentCategories.appendChild(parentDiv)
 			}
-
 			console.log(contentMenu)
 		}
 
