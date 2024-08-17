@@ -23,8 +23,14 @@ var myDirectories=[
 	},
 	{
 		id:4,
-		title:'انواع شیائومی',
+		title:'برند های مختلف گوشی موبایل ',
 		parentId:1
+	},
+	{
+		id:8,
+		title :'گوشی بر اساس قیمت',
+		parentId:1
+
 	},
 	{
 		id:5,
@@ -58,7 +64,16 @@ for (let i=0 ; i< categoryMenu.length ; i ++ ) {
 	li.addEventListener('mouseover',()=> {
 		console.log(categoryMenu[i])
 		contentCategories.innerHTML="";// added by mahmoud
+		let parentDiv = document.createElement('div')
+			parentDiv.classList.add('content-products')
 		if(categoryMenu[i] == 'موبایل'){
+
+			let parentTitle = document.createElement('div')
+			let contentTitle = document.createElement('a')
+			contentTitle.setAttribute('href' ,'#')
+			contentTitle.textContent ='همه ی محصولات موبایل'
+			parentTitle.appendChild(contentTitle)
+			contentCategories.appendChild(parentTitle)
 			
 			 contentMenu = myDirectories.filter((el)=> {
 				return el.parentId == 1
@@ -66,12 +81,18 @@ for (let i=0 ; i< categoryMenu.length ; i ++ ) {
 				return el.title
 			})
 
+
+			
+
 			for(let j =0 ; j < contentMenu.length; j++) {
+				
 				
 				let div = document.createElement('div')
 				div.textContent = contentMenu[j]
 				console.log(contentMenu[j])
-				contentCategories.appendChild(div)
+
+				parentDiv.appendChild(div)
+				contentCategories.appendChild(parentDiv)
 			}
 
 			console.log(contentMenu)
@@ -79,6 +100,12 @@ for (let i=0 ; i< categoryMenu.length ; i ++ ) {
 
 			
 			if(categoryMenu[i] == 'کالای دیجیتال'){
+				let parentTitle = document.createElement('div')
+			let contentTitle = document.createElement('a')
+			contentTitle.setAttribute('href' ,'#')
+			contentTitle.textContent ='همه ی کالای دیجیتال'
+			parentTitle.appendChild(contentTitle)
+			contentCategories.appendChild(parentTitle)
 				
 			 contentMenu = myDirectories.filter((el)=> {
 				return el.parentId == 2
@@ -92,7 +119,8 @@ for (let i=0 ; i< categoryMenu.length ; i ++ ) {
 				let div = document.createElement('div')
 				div.textContent = contentMenu[x]
 				console.log(contentMenu[x])
-				contentCategories.appendChild(div)
+				parentDiv.appendChild(div)
+				contentCategories.appendChild(parentDiv)
 			}
 
 			console.log(contentMenu)

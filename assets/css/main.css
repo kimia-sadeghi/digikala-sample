@@ -190,3 +190,9 @@ a.sub-content:hover {
 .tablinks.active {
   background-color: #ccc;
 }
+.content-products {
+	display: flex;
+	gap: 15px;
+	font-size: 14px;
+	font-weight: bold;
+}
